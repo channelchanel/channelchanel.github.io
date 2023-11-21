@@ -1,66 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-    <meta name="author" content="James Turner">
-    <!-- Add your meta tags and links here -->
-    <link rel="stylesheet" href="/assets/css/style.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         /* Add your custom styles here */
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Your Chosen Font', sans-serif; /* Use a similar font as the sample given */
+            box-sizing: border-box;
         }
 
-        .banner {
-            /* Your banner styles */
-        }
-
+        /* Style your menu bar */
+        /* Add more styling as needed */
         #menu_container {
-            /* Your menu container styles */
+            background-color: #333;
+            overflow: hidden;
         }
 
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        /* Add more styling for dropdown if needed */
+        .dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Style your social media icons */
         .social_container {
-            /* Your social container styles */
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px;
+            background-color: #eee;
         }
 
+        .social_card {
+            margin: 0 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Add more styling for your YouTube diamond icon and other icons */
         .youtube_diamond {
-            /* Styles for YouTube diamond icon */
-        }
-
-        .popular_videos {
-            /* Styles for the popular videos section */
+            background-color: #ff0000; /* Add your desired background color */
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
         }
     </style>
 </head>
+
 <body>
-    <div class="banner" style="background-image:url(/images/banner.webp)">
-        <div class="banner_content">
-            <!-- Your banner content -->
-        </div>
-    </div>
 
+    <!-- Menu bar -->
     <div id="menu_container">
-        <!-- Your menu container content -->
-
-        <div class="social_container">
-            <!-- Your social media icons -->
-
-            <a href="/s/YouTube" target="_blank" class="social_card youtube_diamond">
-                <div class="social_card_icon" style="background-image:url(images/youtube_diamond.png);"></div>
-                <div class="social_card_title">YouTube</div>
-                <div class="social_card_url">YourYouTubeChannel</div>
-            </a>
+        <div class="menu">
+            <a href="/">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Tools <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <!-- Add your tool links here -->
+                    <a href="/mods">Sims 4 Mod List</a>
+                    <a href="/disablepacks">Disable Sims 4 Packs</a>
+                    <!-- Add more tool links as needed -->
+                </div>
+            </div>
+            <a href="/downloads">Downloads</a>
+            <!-- Add more menu items as needed -->
+            <a href="/contact">Contact</a>
         </div>
     </div>
 
-    <div class="popular_videos">
-        <!-- Your popular videos content -->
+    <!-- Social media icons -->
+    <div class="social_container">
+        <!-- Add your other social media icons here -->
+        <a href="/s/Instagram" target="_blank" class="social_card">
+            <!-- Instagram icon -->
+        </a>
+        <a href="/s/Discord" target="_blank" class="social_card">
+            <!-- Discord icon -->
+        </a>
+        <a href="/s/Reddit" target="_blank" class="social_card">
+            <!-- Reddit icon -->
+        </a>
+        <!-- YouTube diamond icon -->
+        <a href="https://www.youtube.com/channel/UCFPfkL1KmCBgLtmmMFJahbg" target="_blank" class="social_card youtube_diamond">
+            YouTube
+        </a>
+        <!-- Add more social media icons as needed -->
     </div>
 
-    <!-- The rest of your HTML content -->
+    <!-- Your website content goes here -->
+
 </body>
+
 </html>
