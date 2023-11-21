@@ -10,6 +10,7 @@
             color: white;
             margin: 0;
             font-family: Arial, sans-serif;
+            text-align: center;
         }
 
         header {
@@ -32,15 +33,45 @@
             text-decoration: none;
         }
 
-        .social-links {
-            text-align: center;
-            margin-top: 20px;
+        .dropdown {
+            display: inline-block;
         }
 
-        .social-links a {
-            margin: 0 10px;
+        .dropbtn {
+            background-color: transparent;
             color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(50, 50, 50, 0.8);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
             text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:nth-child(2) .dropdown-content {
+            display: none;
+        }
+
+        .dropdown:nth-child(2):hover .dropdown-content {
+            display: block;
         }
 
         .video-icons {
@@ -59,12 +90,13 @@
 
     <header>
         <!-- Your banner image goes here -->
+        <h1>Welcome to ChannelChanel!</h1>
     </header>
 
     <nav>
         <a href="#">Home</a>
         <div class="dropdown">
-            <a href="#">Tools</a>
+            <button class="dropbtn">Tools ▼</button>
             <div class="dropdown-content">
                 <a href="#">Sims 4 Mod List</a>
                 <a href="#">Challenge Guide</a>
@@ -72,21 +104,13 @@
             </div>
         </div>
         <div class="dropdown">
-            <a href="#">Downloads</a>
+            <button class="dropbtn">Downloads ▼</button>
             <div class="dropdown-content">
                 <a href="#">My Gallery</a>
             </div>
         </div>
         <a href="#">Contact</a>
     </nav>
-
-    <div class="social-links">
-        <a href="#">Twitter</a>
-        <a href="#">TikTok</a>
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">Tumblr</a>
-    </div>
 
     <div class="video-icons">
         <!-- Add links to your most popular YouTube videos as you create them -->
