@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChannelChanel</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
     <style>
         body {
             background: linear-gradient(to bottom, #000000, #333333);
             color: white;
             margin: 0;
-            font-family: 'Lobster', cursive;
+            font-family: 'Courier New', Courier, monospace; /* Retro font */
             text-align: center;
         }
 
@@ -25,13 +23,14 @@
 
         nav {
             background-color: rgba(50, 50, 50, 0.8);
-            padding: 10px;
+            padding: 15px; /* Increased padding */
             text-align: center;
+            margin-bottom: 10px; /* Increased margin */
         }
 
         nav a {
             color: white;
-            padding: 10px 20px;
+            padding: 15px 20px;
             text-decoration: none;
         }
 
@@ -42,7 +41,7 @@
         .dropbtn {
             background-color: transparent;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 20px;
             font-size: 16px;
             border: none;
             cursor: pointer;
@@ -59,7 +58,7 @@
 
         .dropdown-content a {
             color: white;
-            padding: 12px 16px;
+            padding: 15px 20px;
             text-decoration: none;
             display: block;
         }
@@ -81,23 +80,23 @@
             margin-top: 50px;
         }
 
+        .video-icons h2 {
+            font-family: 'Courier New', Courier, monospace; /* Retro font for titles */
+        }
+
+        .video-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+        }
+
         .video-icons img {
             width: 100px; /* Adjust as needed */
             height: 100px; /* Adjust as needed */
-            margin: 0 10px;
-        }
-
-        /* YouTube icon styling */
-        .youtube-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            cursor: pointer;
         }
     </style>
 </head>
-
 <body>
 
     <header>
@@ -124,26 +123,19 @@
         <a href="#">Contact</a>
     </nav>
 
-    <!-- YouTube icon -->
-    <a href="https://www.youtube.com/channel/your-channel-id" target="_blank" class="youtube-icon">
-        <img src="path/to/youtube-icon.png" alt="YouTube Icon" width="150">
-    </a>
-
     <div class="video-icons">
-    <h2>Popular Videos</h2>
-    <!-- Replace these with actual links to your YouTube videos -->
-    <a href="https://www.youtube.com/watch?v=video1-id" target="_blank">
-        <img src="path/to/video1-thumbnail.jpg" alt="Video 1">
-    </a>
-    <a href="https://www.youtube.com/watch?v=video2-id" target="_blank">
-        <img src="path/to/video2-thumbnail.jpg" alt="Video 2">
-    </a>
-    <a href="https://www.youtube.com/watch?v=video3-id" target="_blank">
-        <img src="path/to/video3-thumbnail.jpg" alt="Video 3">
-    </a>
-</div>
-
+        <h2>Popular Videos</h2>
+        <!-- Replace these with actual links to your YouTube videos -->
+        <a href="https://www.youtube.com/watch?v=video1-id" target="_blank">
+            <img src="path/to/video1-thumbnail.jpg" alt="Video 1">
+        </a>
+        <a href="https://www.youtube.com/watch?v=video2-id" target="_blank">
+            <img src="path/to/video2-thumbnail.jpg" alt="Video 2">
+        </a>
+        <a href="https://www.youtube.com/watch?v=video3-id" target="_blank">
+            <img src="path/to/video3-thumbnail.jpg" alt="Video 3">
+        </a>
+    </div>
 
 </body>
-
 </html>
