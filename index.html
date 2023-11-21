@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,8 +85,18 @@
             height: 100px; /* Adjust as needed */
             margin: 0 10px;
         }
+
+        /* YouTube icon styling */
+        .youtube-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -112,6 +123,11 @@
         <a href="#">Contact</a>
     </nav>
 
+    <!-- YouTube icon -->
+    <a href="https://www.youtube.com/channel/your-channel-id" target="_blank" class="youtube-icon">
+        <img src="path/to/youtube-icon.png" alt="YouTube Icon" width="150">
+    </a>
+
     <div class="video-icons">
         <!-- Add links to your most popular YouTube videos as you create them -->
         <img src="path/to/video1-thumbnail.jpg" alt="Video 1">
@@ -119,5 +135,11 @@
         <img src="path/to/video3-thumbnail.jpg" alt="Video 3">
     </div>
 
+    <!-- Large thumbnail linking to your most popular YouTube video -->
+    <a href="https://www.youtube.com/watch?v=your-video-id" target="_blank">
+        <img src="path/to/large-video-thumbnail.jpg" alt="Most Popular Video" width="300">
+    </a>
+
 </body>
+
 </html>
