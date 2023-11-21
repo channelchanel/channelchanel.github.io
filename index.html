@@ -1,139 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ChannelChanel</title>
     <style>
-        /* Add your custom styles here */
         body {
-            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #000000, #333333);
+            color: white;
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
-        /* Style your menu bar */
-        /* Add more styling as needed */
-        #menu_container {
-            background-color: #333;
-            overflow: hidden;
+        header {
+            background-image: url('path/to/your/banner-image.jpg');
+            background-size: cover;
+            height: 300px; /* Adjust as needed */
+            text-align: center;
+            padding-top: 50px; /* Adjust as needed */
         }
 
-        .menu {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
+        nav {
+            background-color: rgba(50, 50, 50, 0.8);
+            padding: 10px;
+            text-align: center;
         }
 
-        .menu a {
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            margin: 0 10px;
             color: white;
             text-decoration: none;
-            padding: 10px;
         }
 
-        /* Add more styling for dropdown if needed */
-        .dropdown {
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Style your social media icons */
-        .social_container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 10px;
-            background-color: #eee;
-        }
-
-        .social_card {
-            margin: 0 10px;
+        .video-icons {
             text-align: center;
-            text-decoration: none;
-            color: #333;
+            margin-top: 50px;
         }
 
-        /* Add more styling for your YouTube diamond icon and other icons */
-        .youtube_diamond {
-            background-color: #ff0000; /* Add your desired background color */
-            color: #fff;
-            padding: 10px;
-            border-radius: 50%;
+        .video-icons img {
+            width: 100px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
+            margin: 0 10px;
         }
     </style>
 </head>
-
 <body>
 
-    <!-- Menu bar -->
-    <div id="menu_container">
-        <div class="menu">
-            <a href="/">Home</a>
-            <div class="dropdown">
-                <button class="dropbtn">Tools <i class="fa fa-caret-down"></i></button>
-                <div class="dropdown-content">
-                    <!-- Add your tool links here -->
-                    <a href="/mods">Sims 4 Mod List</a>
-                    <a href="/disablepacks">Disable Sims 4 Packs</a>
-                    <!-- Add more tool links as needed -->
-                </div>
+    <header>
+        <!-- Your banner image goes here -->
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <div class="dropdown">
+            <a href="#">Tools</a>
+            <div class="dropdown-content">
+                <a href="#">Sims 4 Mod List</a>
+                <a href="#">Challenge Guide</a>
+                <a href="#">Challenge Tracker</a>
             </div>
-            <a href="/downloads">Downloads</a>
-            <!-- Add more menu items as needed -->
-            <a href="/contact">Contact</a>
         </div>
+        <div class="dropdown">
+            <a href="#">Downloads</a>
+            <div class="dropdown-content">
+                <a href="#">My Gallery</a>
+            </div>
+        </div>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="social-links">
+        <a href="#">Twitter</a>
+        <a href="#">TikTok</a>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Tumblr</a>
     </div>
 
-    <!-- Social media icons -->
-    <div class="social_container">
-        <!-- Add your other social media icons here -->
-        <a href="/s/Instagram" target="_blank" class="social_card">
-            <!-- Instagram icon -->
-        </a>
-        <a href="/s/Discord" target="_blank" class="social_card">
-            <!-- Discord icon -->
-        </a>
-        <a href="/s/Reddit" target="_blank" class="social_card">
-            <!-- Reddit icon -->
-        </a>
-        <!-- YouTube diamond icon -->
-        <a href="https://www.youtube.com/channel/UCFPfkL1KmCBgLtmmMFJahbg" target="_blank" class="social_card youtube_diamond">
-            YouTube
-        </a>
-        <!-- Add more social media icons as needed -->
+    <div class="video-icons">
+        <!-- Add links to your most popular YouTube videos as you create them -->
+        <img src="path/to/video1-thumbnail.jpg" alt="Video 1">
+        <img src="path/to/video2-thumbnail.jpg" alt="Video 2">
+        <img src="path/to/video3-thumbnail.jpg" alt="Video 3">
     </div>
-
-    <!-- Your website content goes here -->
 
 </body>
-
 </html>
