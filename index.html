@@ -34,6 +34,21 @@
             text-decoration: none;
         }
 
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            background: rgba(50, 50, 50, 0.8);
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
         .dropdown {
             display: inline-block;
         }
@@ -95,6 +110,17 @@
             width: 100px; /* Adjust as needed */
             height: 100px; /* Adjust as needed */
         }
+
+        /* Large diamond frame linking to your YouTube channel */
+        .diamond-frame {
+            background-color: transparent;
+            border: 5px solid white;
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -122,6 +148,17 @@
         </div>
         <a href="#">Contact</a>
     </nav>
+
+    <!-- Social media icons -->
+    <div class="social-icons">
+        <a href="#" target="_blank">TikTok</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">Facebook</a>
+    </div>
+
+    <!-- Large diamond frame linking to your YouTube channel -->
+    <a href="https://www.youtube.com/your-channel-id" target="_blank" class="diamond-frame"></a>
 
     <div class="video-icons">
         <h2>Popular Videos</h2>
