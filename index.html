@@ -32,6 +32,7 @@
             color: white;
             padding: 15px 20px;
             text-decoration: none;
+            font-size: 20px; /* Increased font size */
         }
 
         .social-icons {
@@ -121,6 +122,43 @@
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
             cursor: pointer;
         }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 600px) {
+            .dropdown {
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content {
+                text-align: center;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:nth-child(2):hover .dropdown-content {
+                display: block;
+            }
+
+            .menu-icon {
+                display: block;
+                cursor: pointer;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.show {
+                display: block;
+            }
+
+            .nav-links a {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
@@ -131,22 +169,25 @@
     </header>
 
     <nav>
-        <a href="#">Home</a>
-        <div class="dropdown">
-            <button class="dropbtn">Tools ▼</button>
-            <div class="dropdown-content">
-                <a href="#">Sims 4 Mod List</a>
-                <a href="#">Challenge Guide</a>
-                <a href="#">Challenge Tracker</a>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Tools ▼</button>
+                <div class="dropdown-content">
+                    <a href="#">Sims 4 Mod List</a>
+                    <a href="#">Challenge Guide</a>
+                    <a href="#">Challenge Tracker</a>
+                </div>
             </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Downloads ▼</button>
-            <div class="dropdown-content">
-                <a href="#">My Gallery</a>
+            <div class="dropdown">
+                <button class="dropbtn">Downloads ▼</button>
+                <div class="dropdown-content">
+                    <a href="#">My Gallery</a>
+                </div>
             </div>
+            <a href="#">Contact</a>
         </div>
-        <a href="#">Contact</a>
     </nav>
 
     <!-- Social media icons -->
@@ -173,6 +214,16 @@
             <img src="path/to/video3-thumbnail.jpg" alt="Video 3">
         </a>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
+
 
 </body>
 </html>
