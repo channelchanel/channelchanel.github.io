@@ -21,15 +21,15 @@
 
         #videoContainer {
             margin: 20px auto;
-            max-width: 800px;
+            max-width: 600px; /* Made the video container a bit smaller */
             border: 2px solid #0097a7;
             padding: 20px;
             background: white;
         }
 
-        #video {
+        iframe {
             width: 100%;
-            height: auto;
+            height: 338px; /* Adjusted height for a 16:9 aspect ratio */
             border: none; /* Remove borders */
         }
 
@@ -105,10 +105,46 @@
 <div id="videoContainer">
     <iframe id="video" src="https://www.youtube.com/embed/d95PPykB2vE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class="button-container">
-        <button onclick="handleChoice('reject')">Reject</button>
-        <button onclick="handleChoice('submit')">Submit</button>
+        <button onclick="openPopup('reject')">Reject</button>
+        <button onclick="openPopup('submit')">Submit</button>
     </div>
 </div>
+
+<div class="popup" id="rejectPopup">
+    <h2>Reject Reason</h2>
+    <select id="rejectReason">
+        <option value="not-loading">Not Loading</option>
+        <option value="sensitive">Sensitive/PII</option>
+        <option value="watermark">Watermark/Logo/Text</option>
+        <option value="blurry">Blurry/Artifact</option>
+        <option value="multiple-transitions">Multiple Transitions</option>
+        <option value="video-border">Video Has Border</option>
+        <option value="video-vertical">Video Vertical</option>
+        <option value="still-image">Still Image/Collage</option>
+        <option value="jitter">Jitter/Shaky Camera</option>
+        <option value="ai-content">AI Content</option>
+        <option value="visual-effects">Visual Effects</option>
+        <option value="other">Other Visual Issue</option>
+    </select>
+    <div class="button-container">
+        <button onclick="rejectVideo()">Submit</button>
+        <button onclick="closePopup()">Cancel</button>
+    </div>
+</div>
+
+<div class="popup" id="submitPopup">
+    <h2>Submit Video</h2>
+    <select id="submitOption">
+        <option value="clip">With Clipping</option>
+        <option value="no-clip">Without Clipping</option>
+    </select>
+    <div class="button-container">
+        <button onclick="submitVideo()">Submit</button>
+        <button onclick="closePopup()">Cancel</button>
+    </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
 
 <footer>
     This is a website made by ChannelChanel for demonstration purposes only.
@@ -123,8 +159,32 @@
 
     let currentVideoIndex = 0;
 
-    function handleChoice(choice) {
-        console.log(`Video ${choice}`);
+    function openPopup(type) {
+        document.getElementById('overlay').style.display = 'block';
+        if (type === 'reject') {
+            document.getElementById('rejectPopup').style.display = 'block';
+        } else {
+            document.getElementById('submitPopup').style.display = 'block';
+        }
+    }
+
+    function closePopup() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('rejectPopup').style.display = 'none';
+        document.getElementById('submitPopup').style.display = 'none';
+    }
+
+    function rejectVideo() {
+        let reason = document.getElementById('rejectReason').value;
+        console.log('Video rejected for reason:', reason);
+        closePopup();
+        loadNextVideo();
+    }
+
+    function submitVideo() {
+        let option = document.getElementById('submitOption').value;
+        console.log('Video submitted with option:', option);
+        closePopup();
         loadNextVideo();
     }
 
