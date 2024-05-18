@@ -25,11 +25,18 @@
             border: 2px solid #0097a7;
             padding: 20px;
             background: white;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
         }
 
         iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 450px; /* Adjust height as needed */
+            height: 100%;
+            border: none; /* Removes borders */
         }
 
         .button-container {
@@ -66,7 +73,7 @@
 </header>
 
 <div id="videoContainer">
-    <iframe id="video" src="https://www.youtube.com/embed/d95PPykB2vE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe id="video" src="https://www.youtube.com/embed/d95PPykB2vE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class="button-container">
         <button onclick="handleChoice('reject')">Reject</button>
         <button onclick="handleChoice('submit')">Submit</button>
