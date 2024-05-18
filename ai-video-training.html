@@ -25,18 +25,12 @@
             border: 2px solid #0097a7;
             padding: 20px;
             background: white;
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
         }
 
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        #video {
             width: 100%;
-            height: 100%;
-            border: none; /* Removes borders */
+            height: auto;
+            border: none; /* Remove borders */
         }
 
         .button-container {
@@ -63,6 +57,42 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border: 2px solid #0097a7;
+            z-index: 10;
+        }
+
+        .popup button {
+            background-color: #0097a7;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .popup button:hover {
+            background-color: #00796b;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 5;
         }
     </style>
 </head>
