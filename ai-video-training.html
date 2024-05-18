@@ -85,3 +85,113 @@
 
         .overlay {
             display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ChannelChanel AI Video Training</h1>
+</header>
+
+<div id="videoContainer">
+    <iframe id="video" src="https://www.youtube.com/embed/d95PPykB2vE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="button-container">
+        <button onclick="openPopup('reject')">Reject</button>
+        <button onclick="openPopup('submit')">Submit</button>
+    </div>
+</div>
+
+<div class="popup" id="rejectPopup">
+    <h2>Reject Reason</h2>
+    <select id="rejectReason">
+        <option value="not-loading">Not Loading</option>
+        <option value="sensitive">Sensitive/PII</option>
+        <option value="watermark">Watermark/Logo/Text</option>
+        <option value="blurry">Blurry/Artifact</option>
+        <option value="multiple-transitions">Multiple Transitions</option>
+        <option value="video-border">Video Has Border</option>
+        <option value="video-vertical">Video Vertical</option>
+        <option value="still-image">Still Image/Collage</option>
+        <option value="jitter">Jitter/Shaky Camera</option>
+        <option value="ai-content">AI Content</option>
+        <option value="visual-effects">Visual Effects</option>
+        <option value="other">Other Visual Issue</option>
+    </select>
+    <div class="button-container">
+        <button onclick="rejectVideo()">Submit</button>
+        <button onclick="closePopup()">Cancel</button>
+    </div>
+</div>
+
+<div class="popup" id="submitPopup">
+    <h2>Submit Video</h2>
+    <select id="submitOption">
+        <option value="clip">With Clipping</option>
+        <option value="no-clip">Without Clipping</option>
+    </select>
+    <div class="button-container">
+        <button onclick="submitVideo()">Submit</button>
+        <button onclick="closePopup()">Cancel</button>
+    </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<footer>
+    This is a website made by ChannelChanel for demonstration purposes only.
+</footer>
+
+<script>
+    // Array of video URLs
+    const videos = [
+        "https://www.youtube.com/embed/d95PPykB2vE",
+        "https://www.youtube.com/embed/RE-dLbNOkf4"
+    ];
+
+    let currentVideoIndex = 0;
+
+    function openPopup(type) {
+        document.getElementById('overlay').style.display = 'block';
+        if (type === 'reject') {
+            document.getElementById('rejectPopup').style.display = 'block';
+        } else {
+            document.getElementById('submitPopup').style.display = 'block';
+        }
+    }
+
+    function closePopup() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('rejectPopup').style.display = 'none';
+        document.getElementById('submitPopup').style.display = 'none';
+    }
+
+    function rejectVideo() {
+        let reason = document.getElementById('rejectReason').value;
+        console.log('Video rejected for reason:', reason);
+        closePopup();
+        loadNextVideo();
+    }
+
+    function submitVideo() {
+        let option = document.getElementById('submitOption').value;
+        console.log('Video submitted with option:', option);
+        closePopup();
+        loadNextVideo();
+    }
+
+    function loadNextVideo() {
+        currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+        document.getElementById('video').src = videos[currentVideoIndex];
+    }
+</script>
+
+</body>
+</html>
