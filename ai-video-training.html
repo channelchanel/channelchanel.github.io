@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChannelChanel AI Video Training</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #e0f7fa, #e1bee7);
+            color: #333;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        header {
+            background: #0097a7;
+            color: white;
+            padding: 20px;
+        }
+
+        #videoContainer {
+            margin: 20px auto;
+            max-width: 800px;
+            border: 2px solid #0097a7;
+            padding: 20px;
+            background: white;
+        }
+
+        #video {
+            width: 100%;
+            height: auto;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #0097a7;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #00796b;
+        }
+
+        footer {
+            background: #0097a7;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border: 2px solid #0097a7;
+            z-index: 10;
+        }
+
+        .popup button {
+            background-color: #0097a7;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .popup button:hover {
+            background-color: #00796b;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ChannelChanel AI Video Training</h1>
+</header>
+
+<div id="videoContainer">
+    <video id="video" controls>
+        <source src="path/to/sample-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="button-container">
+        <button onclick="openPopup('reject')">Reject</button>
+        <button onclick="openPopup('submit')">Submit</button>
+    </div>
+</div>
+
+<div class="popup" id="rejectPopup">
+    <h2>Reject Reason</h2>
+    <select id="rejectReason">
+        <option value="not-loading">Not Loading</option>
+        <option value="sensitive">Sensitive/PII</option>
+        <option value="watermark">Watermark/Logo/Text</option>
+        <option value="blurry">Blurry/Artifact</option>
+        <option value="multiple-transitions">Multiple Transitions</option>
+        <option value="video-border">Video Has Border</option>
+        <option value="video-vertical">Video Vertical</option>
+        <option value="still-image">Still Image/Collage</option>
+        <option value="jitter">Jitter/Shaky Camera</option>
+        <option value="ai-content">AI Content</option>
+        <option value="visual-effects">Visual Effects</option>
+        <option value="other">Other Visual Issue</option>
+    </select>
+    <div class="button-container">
+        <button onclick="rejectVideo()">Submit</button>
+        <button onclick="closePopup()">Cancel</button>
+    </div>
+</div>
+
+<div class="popup" id="submitPopup">
+    <h2>Submit Video</h2>
+    <select id="submitOption">
+        <option value="clip">With Clipping</option>
+        <option value="no-clip">Without Clipping</option>
+    </select>
+    <div class="button-container">
+        <button onclick="submitVideo()">Submit</button>
+        <button onclick="closePopup()">Cancel</button>
+    </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<footer>
+    This is a website made by ChannelChanel for demonstration purposes only.
+</footer>
+
+<script>
+    function openPopup(type) {
+        document.getElementById('overlay').style.display = 'block';
+        if (type === 'reject') {
+            document.getElementById('rejectPopup').style.display = 'block';
+        } else {
+            document.getElementById('submitPopup').style.display = 'block';
+        }
+    }
+
+    function closePopup() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('rejectPopup').style.display = 'none';
+        document.getElementById('submitPopup').style.display = 'none';
+    }
+
+    function rejectVideo() {
+        let reason = document.getElementById('rejectReason').value;
+        console.log('Video rejected for reason:', reason);
+        closePopup();
+        // Load next video logic here
+    }
+
+    function submitVideo() {
+        let option = document.getElementById('submitOption').value;
+        console.log('Video submitted with option:', option);
+        closePopup();
+        // Load next video logic here
+    }
+</script>
+
+</body>
+</html>
