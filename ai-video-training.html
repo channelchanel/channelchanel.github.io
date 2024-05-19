@@ -81,14 +81,6 @@
             display: block;
         }
 
-        .dropdown:nth-child(2) .dropdown-content {
-            display: none;
-        }
-
-        .dropdown:nth-child(2):hover .dropdown-content {
-            display: block;
-        }
-
         #videoContainer {
             margin: 20px auto;
             max-width: 600px;
@@ -182,14 +174,6 @@
 
             .dropdown-content {
                 text-align: center;
-            }
-
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-
-            .dropdown:nth-child(2):hover .dropdown-content {
-                display: block;
             }
 
             .menu-icon {
@@ -299,4 +283,19 @@
 <div class="overlay" id="overlay"></div>
 
 <footer>
-    This is a website made by ChannelChanel for
+    This is a website made by ChannelChanel for demonstration purposes only.
+</footer>
+
+<script>
+    function toggleMenu() {
+        var navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+    }
+
+    // Array of video URLs
+    const videos = [
+        "https://www.youtube.com/embed/d95PPykB2vE",
+        "https://www.youtube.com/embed/RE-dLbNOkf4"
+    ];
+
+    let currentVideoIndex = 0;
