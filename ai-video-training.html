@@ -19,71 +19,9 @@
             padding: 20px;
         }
 
-        nav {
-            background-color: rgba(50, 50, 50, 0.8);
-            padding: 15px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        nav a {
-            color: white;
-            padding: 15px 20px;
-            text-decoration: none;
-            font-size: 20px;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            background: rgba(50, 50, 50, 0.8);
-            padding: 5px 0;
-            margin-bottom: 10px;
-        }
-
-        .social-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-        }
-
-        .dropdown {
-            display: inline-block;
-        }
-
-        .dropbtn {
-            background-color: transparent;
-            color: white;
-            padding: 15px 20px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(50, 50, 50, 0.8);
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 15px 20px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
         #videoContainer {
             margin: 20px auto;
-            max-width: 600px;
+            max-width: 600px; /* Smaller container size */
             border: 2px solid #0097a7;
             padding: 20px;
             background: white;
@@ -91,8 +29,8 @@
 
         iframe {
             width: 100%;
-            height: 338px;
-            border: none;
+            height: 300px; /* Smaller video size */
+            border: none; /* Remove borders */
         }
 
         .button-container {
@@ -156,48 +94,6 @@
             background: rgba(0,0,0,0.5);
             z-index: 5;
         }
-
-        /* Mobile Styles */
-        @media screen and (max-width: 600px) {
-            .home-icon {
-                display: inline-block;
-                margin-right: 10px;
-            }
-
-            .hamburger-icon {
-                display: inline-block;
-            }
-
-            .dropdown {
-                display: block;
-                text-align: left;
-            }
-
-            .dropdown-content {
-                text-align: center;
-            }
-
-            .menu-icon {
-                display: inline-block;
-                cursor: pointer;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .nav-links.show {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-end;
-            }
-
-            .nav-links a {
-                display: block;
-                margin: 5px 0;
-                font-size: 18px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -205,40 +101,6 @@
 <header>
     <h1>ChannelChanel AI Video Training</h1>
 </header>
-
-<nav>
-    <div class="menu-icon" onclick="toggleMenu()">
-        <div class="home-icon"><a href="index.html">Home</a></div>
-        <div class="hamburger-icon">&#9776;</div>
-    </div>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="#">Challenges</a>
-        <div class="dropdown">
-            <button class="dropbtn">Tools ▼</button>
-            <div class="dropdown-content">
-                <a href="#">Sims 4 Mod List</a>
-                <a href="#">Challenge Guide</a>
-                <a href="#">Challenge Tracker</a>
-                <a href="ai-video-training.html">AI Video Clipping Training</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Downloads ▼</button>
-            <div class="dropdown-content">
-                <a href="#">My Gallery</a>
-            </div>
-        </div>
-        <a href="#">Contact</a>
-    </div>
-</nav>
-
-<div class="social-icons">
-    <a href="https://www.tiktok.com/@chan_nelchanel?_t=8hkEgpw7jC7&_r=1" target="_blank">TikTok</a>
-    <a href="https://twitter.com/chan_nelchanel" target="_blank">Twitter</a>
-    <a href="https://instagram.com/chan_nelchanel?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" target="_blank">Instagram</a>
-    <a href="https://www.facebook.com/channelchanel05?mibextid=LQQJ4d" target="_blank">Facebook</a>
-</div>
 
 <div id="videoContainer">
     <iframe id="video" src="https://www.youtube.com/embed/d95PPykB2vE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -289,11 +151,17 @@
 </footer>
 
 <script>
-    function toggleMenu() {
-        var navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('show');
-    }
-
     // Array of video URLs
     const videos = [
-        "https://www.youtube.com/embed/d95PPykB2vE
+        "https://www.youtube.com/embed/d95PPykB2vE",
+        "https://www.youtube.com/embed/RE-dLbNOkf4",
+        "https://www.youtube.com/embed/your-next-video-url",
+        "https://www.youtube.com/embed/another-video-url",
+        "https://www.youtube.com/embed/yet-another-video-url"
+        // Add more video URLs here
+    ];
+
+    let currentVideoIndex = 0;
+
+    function openPopup(type) {
+        document.getElementById('overlay').style.display = 'block';
